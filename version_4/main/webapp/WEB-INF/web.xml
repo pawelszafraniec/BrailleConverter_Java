@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    
+    <servlet>
+        <servlet-name>ConvertTextToBraille</servlet-name>
+        <servlet-class>pawel.szafraniec.servlets.ConvertTextToBrailleServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConvertBrailleToText</servlet-name>
+        <servlet-class>pawel.szafraniec.servlets.ConvertBrailleToTextServlet</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>BrailleNumericTable</servlet-name>
+        <servlet-class>pawel.szafraniec.servlets.BrailleNumericTableServlet</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>Cookies</servlet-name>
+        <servlet-class>pawel.szafraniec.servlets.CookiesServlet</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>SessionBrailleToText</servlet-name>
+        <servlet-class>pawel.szafraniec.servlets.SessionBrailleToTextServlet</servlet-class>
+    </servlet>
+     <servlet>
+        <servlet-name>SessionTextToBraille</servlet-name>
+        <servlet-class>pawel.szafraniec.servlets.SessionServletTextToBraille</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Error</servlet-name>
+        <servlet-class>pawel.szafraniec.servlets.ErrorServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ConvertTextToBraille</servlet-name>
+        <url-pattern>/ConvertT</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConvertBrailleToText</servlet-name>
+        <url-pattern>/ConvertB</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BrailleNumericTable</servlet-name>
+        <url-pattern>/Numeric</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Cookies</servlet-name>
+        <url-pattern>/Cookies</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SessionBrailleToText</servlet-name>
+        <url-pattern>/SessionBTT</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SessionTextToBraille</servlet-name>
+        <url-pattern>/SessionTTB</url-pattern>
+    </servlet-mapping> 
+    <servlet-mapping>
+        <servlet-name>Error</servlet-name>
+        <url-pattern>/Error</url-pattern>
+    </servlet-mapping> 
+       
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

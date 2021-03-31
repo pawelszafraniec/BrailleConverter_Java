@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Braille Converter</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <style>
+            .center{
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+
+    </head> 
+    <body>
+        <div class="container">
+            <h1 style="text-align: center">Web Braille Converter</h1>
+            <p style="text-align: center">Program for converting plain text to Braille notation and vice versa</p>
+            <br>
+            <form style="text-align:right" action="CookiesServlet">
+                <input type="submit" value="Cookies & history of operations"/>
+            </form>  
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                <li><a data-toggle="tab" href="#convertTextToBrailleMenu">Convert text to Braille</a></li>
+                <li><a data-toggle="tab" href="#convertBrailleToTextMenu">Convert Braille to text</a></li>
+                <li><a data-toggle="tab" href="#brailleNumeric">Braille Numeric</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <h3 style="text-align: center">HOME</h3>
+                    <p style="text-align: center">Welcome in the Web Braille converter!</p>
+                    <p style="text-align: center">Select the operations you want to perform from the tabs. </p>
+                    <br>
+                </div>
+
+                <div id="convertTextToBrailleMenu" class="tab-pane fade" style="text-align: center">
+                    <h3>Text to Braille conversion</h3>
+                    <br>
+                    <p>Enter the text you want to convert</p>
+                    <form  action = "ConvertTextToBrailleServlet">
+                        <input type = "text" name="inputString"/>
+                        <input type ="submit" value="convert "/>
+                    </form>
+                </div>
+
+                <div id="convertBrailleToTextMenu" class="tab-pane fade" style="text-align: center">
+                    <h3>Braille to Text conversion</h3>
+                    <p>Enter the string using numbers presented in Braille Numeric tab.</p>
+                    <p>Separate each number with a whitespace.</p>
+                    <p>Exemplary input string: 10 11 12  </p>
+                    <p>Messages containing only numbers will be accepted.</p>
+                    <br>
+                    <p>Enter the text you want to convert</p>
+                    <form action="ConvertBrailleToTextServlet">
+                        <input type="text" name="inputString"/>
+                        <input type="submit" value="convert"/>
+                    </form>
+                </div>
+
+                <div id="brailleNumeric" class="tab-pane fade" style="text-align: center" >
+                    <h3>Braille alphabet in numeric representation</h3>
+
+                    <form action="BrailleNumericTableServlet">
+                        <input type ="submit" value="Click to display" />
+                    </form>
+                </div>      
+            </div>
+        </div>
+    </body>
+</html>
